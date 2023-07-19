@@ -6,7 +6,7 @@
     - name: update_cache
       apt:
         update_cache: yes
-    - name: install apache
+    - name: install nginx
       apt:
-        name: apache2
+        name: nginx
         state: present
