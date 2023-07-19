@@ -18,7 +18,7 @@
         state: present
     - name: create dir
       file:
-        path: "{{dir_name}}""
+        path: "{{dir_name}}"
         state: directory
     - name:
       command: "ls test"
