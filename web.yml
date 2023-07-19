@@ -21,4 +21,9 @@
         path: "{{dir_name}}"
         state: directory
     - name:
-      command: "ls test"
+      command: "ls {{dir_name}}"
+      register: results
+
+    - name: print stdout
+      debug:
+        var: result
