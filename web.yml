@@ -3,6 +3,9 @@
   remote_user: amr
   become: yes
   tasks:
+    - name: update_cache
+      apt:
+        update_cache: yes
     - name: install apache
       apt:
         name: httpd
