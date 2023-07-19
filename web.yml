@@ -30,10 +30,11 @@
   #   - name: print stdout
   #     debug:
   #       var: results.stdout
-      # - name: copy template
-      #   template:
-      #     src: myconf
-      #     dest: myconf
+      - name: copy template
+        template:
+          src: myconf
+          dest: myconf
+        notify: restrt nginx
       - name: create user x
         user: 
           name: "{{item}}"
@@ -42,3 +43,8 @@
           - amr
           - mohamed
           - hassan
+  handlers:
+    - name: restrt nginx
+      service:
+        name: nginx
+        state: restarted
