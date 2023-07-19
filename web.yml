@@ -4,7 +4,7 @@
   become: yes
   vars:
     - dir_name: test
-    - myname: amros
+    - myname: ahmed
     - update: no
   # vars_prompt:
   #   - name: pass
