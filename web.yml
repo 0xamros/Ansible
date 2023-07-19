@@ -35,14 +35,14 @@
           src: myconf
           dest: myconf
         notify: restrt nginx
-      - name: create user x
-        user: 
-          name: "{{item}}"
-          state: present
-        with_items:
-          - amr
-          - mohamed
-          - hassan
+      # - name: create user x
+      #   user: 
+      #     name: "{{item}}"
+      #     state: present
+      #   with_items:
+      #     - amr
+      #     - mohamed
+      #     - hassan
   handlers:
     - name: restrt nginx
       service:
