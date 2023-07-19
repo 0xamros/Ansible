@@ -2,6 +2,12 @@
 - hosts: web
   remote_user: amr
   become: yes
+  vars:
+    - dir_name: test
+  vars_prompt:
+    - name: pass
+      prompt: plz enter your pass
+      private: yes
   tasks:
     - name: update_cache
       apt:
@@ -10,3 +16,9 @@
       apt:
         name: nginx
         state: present
+    - name: create dir
+      file:
+        path: "{{dir_name}}""
+        state: directory
+    - name:
+      command: "ls test"
