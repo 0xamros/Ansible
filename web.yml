@@ -2,49 +2,9 @@
 - hosts: web
   remote_user: amr
   become: yes
-  vars:
-    - dir_name: test
-    - myname: ahmed
-    - update: no
-  # vars_prompt:
-  #   - name: pass
-  #     prompt: plz enter your pass
-  #     private: yes
-  tasks:
-      - name: update_cache
-        apt:
-          update_cache: yes
-        when: ansible_facts["os_family"]=="Centos"
-  #   - name: install nginx
-  #     apt:
-  #       name: nginx
-  #       state: present
-  #   - name: create dir
-  #     file:
-  #       path: "{{ dir_name }}"
-  #       state: directory
-  #   - name:
-  #     command: "ls {{ dir_name }}"
-  #     register: results
-
-  #   - name: print stdout
-  #     debug:
-  #       var: results.stdout
-      - name: copy template
-        template:
-          src: myconf
-          dest: myconf
-        notify: restrt nginx
-      # - name: create user x
-      #   user: 
-      #     name: "{{item}}"
-      #     state: present
-      #   with_items:
-      #     - amr
-      #     - mohamed
-      #     - hassan
-  handlers:
-    - name: restrt nginx
-      service:
-        name: nginx
-        state: restarted
+  vars_prompt:
+    - name: pass
+      prompt: plz enter your pass
+      private: yes
+  roles:
+    - web
