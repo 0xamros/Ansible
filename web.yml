@@ -8,5 +8,5 @@
         update_cache: yes
     - name: install apache
       apt:
-        name: httpd
+        name: apache2
         state: present
