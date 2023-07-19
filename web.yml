@@ -5,14 +5,16 @@
   vars:
     - dir_name: test
     - myname: amros
+    - update: no
   # vars_prompt:
   #   - name: pass
   #     prompt: plz enter your pass
   #     private: yes
   tasks:
-  #   - name: update_cache
-  #     apt:
-  #       update_cache: yes
+      - name: update_cache
+        apt:
+          update_cache: yes
+        when: update=="yes"
   #   - name: install nginx
   #     apt:
   #       name: nginx
