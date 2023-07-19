@@ -1,5 +1,7 @@
 ---
 - hosts: web
+  remote_user: amr
+  become: yes
   tasks:
     - name: install apache
       apt:
