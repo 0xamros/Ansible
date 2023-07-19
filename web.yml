@@ -18,10 +18,10 @@
         state: present
     - name: create dir
       file:
-        path: "{{dir_name}}"
+        path: "{{ dir_name }}"
         state: directory
     - name:
-      command: "ls {{dir_name}}"
+      command: "ls {{ dir_name }}"
       register: results
 
     - name: print stdout
