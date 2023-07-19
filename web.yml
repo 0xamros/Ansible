@@ -26,4 +26,4 @@
 
     - name: print stdout
       debug:
-        var: result
+        var: results
